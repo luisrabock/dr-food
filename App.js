@@ -1,21 +1,18 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
 
-const ola = "teror";
+import SearchScreen from "./src/pages/SearchScreen";
 
-const App = () => (
-    <View style={styles.container}>
-        <Text>{`${ola} terror`}</Text>
-    </View>
+const navigator = createStackNavigator(
+  {
+    Search: SearchScreen,
+  },
+  {
+    initalRouteName: "Search",
+    defaultNavigationOptions: {
+      title: "Business Search",
+    },
+  }
 );
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
-    },
-});
-
-export default App;
+export default createAppContainer(navigator);
