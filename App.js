@@ -11,6 +11,7 @@ const navigator = createStackNavigator(
     initalRouteName: "Search",
     defaultNavigationOptions: {
       title: "Business Search",
+      cardStyle: { backgroundColor: "#FFFFFF" },
     },
   }
 );
