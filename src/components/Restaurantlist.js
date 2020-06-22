@@ -2,16 +2,19 @@ import React from "react";
 import PropTypes from "prop-types";
 import { View, Text, StyleSheet, FlatList } from "react-native";
 
-const ResultsList = ({ title, data }) => {
+import RestaurantDetails from "./RestaurantDetails";
+
+const Restaurantlist = ({ title, data }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.titleStyle}>{title}</Text>
       <FlatList
         horizontal
+        showsHorizontalScrollIndicator={false}
         data={data}
         keyExtractor={(el) => el.id}
         renderItem={({ item }) => {
-          return <Text>{item.name}</Text>;
+          return <RestaurantDetails data={item} />;
         }}
       />
     </View>
@@ -19,15 +22,19 @@ const ResultsList = ({ title, data }) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    marginBottom: 15,
+  },
   titleStyle: {
+    marginLeft: 15,
     fontSize: 18,
     fontWeight: "bold",
   },
 });
 
-ResultsList.propTypes = {
+Restaurantlist.propTypes = {
   title: PropTypes.string.isRequired,
   data: PropTypes.instanceOf(Array).isRequired,
 };
 
-export default ResultsList;
+export default Restaurantlist;

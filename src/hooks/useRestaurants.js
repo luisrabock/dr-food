@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import YelpService from "../services/yelpService";
 
 export default () => {
@@ -10,14 +10,14 @@ export default () => {
       const response = await YelpService.get("/search", {
         params: {
           limit: 50,
-          term:searchTerm,
-          location: "san jose",
+          term: searchTerm,
+          location: "sao paulo",
         },
       });
       setRestaurants(response.data.businesses);
-    } catch(err) {
+    } catch (err) {
       setErrorMessage("Something wrong");
-    }   
+    }
   };
 
   useEffect(() => {
