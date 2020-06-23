@@ -23,9 +23,9 @@ const SearchScreen = () => {
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <ScrollView>
-        <Restaurantlist data={filtersByPrice("$")} title="Cost Effective" />
-        <Restaurantlist data={filtersByPrice("$$")} title="Bit Pricier" />
-        <Restaurantlist data={filtersByPrice("$$$")} title="Big Spender" />
+        <Restaurantlist data={filtersByPrice("$")} title="Comer barato" />
+        <Restaurantlist data={filtersByPrice("$$")} title="Preço moderado" />
+        <Restaurantlist data={filtersByPrice("$$$")} title="Sofisticados" />
       </ScrollView>
     </View>
   );

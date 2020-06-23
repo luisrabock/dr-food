@@ -17,6 +17,7 @@
   "plugins": ["react", "jsx-a11y", "import", "react-hooks", "prettier"],
   "rules": {
     "semi": ["error", "always"],
+    "react/jsx-curly-newline": "off",
     "linebreak-style": ["error", "windows"],
     "no-use-before-define": ["error", { "variables": false }],
     "quotes": [2, "double", "avoid-escape"],
